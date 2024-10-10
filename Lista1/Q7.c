@@ -1,15 +1,15 @@
 #include <stdio.h>
 
-int primo(int num){
-    if (num <= 1){
+int primo(int numero){
+    if (numero <= 1){
         return 0;
-    } else if (num == 2){
+    } else if (numero == 2){
         return 1;
-    } else if (num%2 == 0){
+    } else if (numero%2 == 0){
         return 0;
     } else {
-        for (int i = 3; i < num; i+=2){
-            if (num%i == 0){
+        for (int i = 3; i < numero; i+=2){
+            if (numero%i == 0){
                 return 0;
             }
         }

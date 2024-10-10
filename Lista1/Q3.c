@@ -1,11 +1,11 @@
 #include <stdio.h>
 
-int fatorial(int num){
-    int i, fat = 1;
-    for (i = 1; i <= num; i++){
-        fat *= i;
+int fatorial(int numero){
+    int i, fatorial = 1;
+    for (i = 1; i <= numero; i++){
+        fatorial *= i;
     }
-    return fat;
+    return fatorial;
 }
 
 int main(){

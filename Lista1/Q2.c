@@ -1,9 +1,9 @@
 #include <stdio.h>
 
-int numeroprimo(int a){
-    int div;
-    for (div = 2; div < a; div++)
-        if(a % div == 0)
+int numeroprimo(int numero){
+    int divisor;
+    for (divisor = 2; divisor < numero; divisor++)
+        if(numero % divisor == 0)
             return 0;
     return 1;
 }
