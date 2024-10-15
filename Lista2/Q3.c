@@ -7,18 +7,19 @@
 //void ordena(int valores[], int n);
 #include <stdio.h>
 
-void le_vetor(int vetor[], int tamanho){
-    for (int i = 0; i<tamanho; i++){
+void le_vetor(int vetor[], int tamanho) {
+    for (int i = 0; i < tamanho; i++) {
         printf("Digite o valor do endereço %d\n", i);
         scanf("%d", &vetor[i]);
     }
 }
 
-void ordena(int vetor[], int tamanho){
+void ordena(int vetor[], int tamanho) {
     int temporario = 0;
-    for(int i = 0; i < tamanho-1; i++){
-        for(int j = i+1; j < tamanho; j++){
-            if(vetor[j]<vetor[i]){
+
+    for (int i = 0; i < tamanho-1; i++) {
+        for (int j = i + 1; j < tamanho; j++) {
+            if (vetor[j] < vetor[i]) {
                 temporario = vetor[i];
                 vetor[i] = vetor[j];
                 vetor[j] = temporario;
@@ -29,12 +30,15 @@ void ordena(int vetor[], int tamanho){
 
 int main(){
     int vetor[99], tamanho;
+
     printf("Insira o tamanho do vetor desejado:\n");
     scanf("%d", &tamanho);
-    le_vetor(vetor,tamanho);
+    le_vetor(vetor, tamanho);
     ordena(vetor, tamanho);
-    for (int i = 0; i < tamanho; i++){
+
+    for (int i = 0; i < tamanho; i++) {
         printf("%d ", vetor[i]);
     }
+    
     printf("\n");
 }
