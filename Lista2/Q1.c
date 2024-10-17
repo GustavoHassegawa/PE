@@ -23,7 +23,7 @@ int main() {
     scanf("%d", &tamanho);
 
     for (int i = 0; i < tamanho; i++) {
-        printf("Digite o valor do endereço %d\n", i);
+        printf("Digite o valor do endereco %d\n", i);
         scanf("%d", &vetor[i]);
     }
     
