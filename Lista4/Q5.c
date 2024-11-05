@@ -11,10 +11,51 @@ void imprime_linha(char linha[]) {
     }
 }
 
-
+int eh_palavra(int a) {
+	return (a >= 'a' && a <= 'z') || (a >= 'A' && a <= 'Z'); 
+}
 
 int main() {
-    char texto[MAX], letra[MAX] = "", linha[81] = "";
+	int c, i = 0, j = 0;
+	char linha[80], texto[MAX];
+	
+	while (1){
+		fgets(texto, MAX, stdin);
+		j = 0;
+		c = getchar();
+		imprime_linha(texto);
+		
+		if (c == -1) {
+			break;
+		} else {
+		
+			while(texto[j] != '\0') {
+				linha[i] = texto[j];
+				i++;
+				j++;
+				
+				if (i = 81 && linha[80] == '\0') {
+					imprime_linha(linha);
+					i = 0;				
+				} else if (i = 81 && linha[80] != '\0') {
+					while (linha[i-1] != ' ') {
+						i--;
+					}
+					i -= 1;
+					
+										
+				}
+			}
+			
+		}
+	}
+return 0;
+	
+}
+
+/*
+int main() {
+    char texto[MAX], letra[MAX] = "", linha[80] = "";
     int i = 0, j = 0;
 
     printf("Insira o texto: ");
@@ -45,3 +86,4 @@ int main() {
 
     return 0;
 }
+*/
