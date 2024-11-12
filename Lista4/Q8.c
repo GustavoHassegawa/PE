@@ -17,7 +17,13 @@ typedef struct {
 } aluno;
 
 int verifica_string(char A[MAX], char B[MAX]) {
-	while
+	int i = 0;
+	while (A[i] != '\0' && B[i] != '\0') {
+		if (A[i] != B[i]) {
+			return 0;
+		}
+	}
+	return 1;
 }
 
 void cadastro_aluno (aluno alunos[], int n) {
@@ -38,7 +44,8 @@ void busca_aluno (aluno alunos[], char nome[],int n){
 	int j = 0, k = 0;
 	
 	for (int i = 0; i < n; i++) {
-	
+		j = 0;
+		
 		while (alunos[i].nome[j] != '\0') {
 			char letraAtual = alunos[i].nome[j];
 			
@@ -46,8 +53,14 @@ void busca_aluno (aluno alunos[], char nome[],int n){
 				nomeParcial[k] = letraAtual;
 				k++;
 			} else {
-				//FAZER VERIFICADOR PALAVRA
+				if (verifica_string(nome, nomeParcial)) {
+					//É igual
+				} else {
+					nomeParcial[0] = '\0';
+					k = 0;
+				}
 			}
+			j++;
 		}
 	}
 }
