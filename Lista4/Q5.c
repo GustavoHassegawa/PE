@@ -11,10 +11,6 @@ void imprime_linha(char linha[]) {
     }
 }
 
-int eh_palavra(int a) {
-	return (a >= 'a' && a <= 'z') || (a >= 'A' && a <= 'Z'); 
-}
-
 int main() {
 	int c, i = 0, j = 0;
 	char linha[80], texto[MAX];
@@ -43,7 +39,6 @@ int main() {
 					}
 					i -= 1;
 					
-										
 				}
 			}
 			
