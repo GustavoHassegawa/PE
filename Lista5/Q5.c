@@ -52,5 +52,8 @@ int main() {
 	
 	printf("Vetor B: ");
 	imprime_vetor(b,sizeA);
+
+	free(a);
+	free(b);
 	return 0;
 }
