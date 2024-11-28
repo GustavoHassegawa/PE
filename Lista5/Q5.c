@@ -1,25 +1,56 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 void swap(int **a, int **b) {
-	int *temp;
-	temp = *a;
+	int *temp = *a;
 	*a = *b;
 	*b = temp;
 }
 
-void imprime_vetor(int vetor[], int n) {
+void le_vetor(int *vetor, int n) {
+	for (int i = 0; i < n; i++){
+		printf("Position %d: ", i);
+		scanf("%d", &vetor[i]);
+	}
+}
+
+void imprime_vetor(int *vetor, int n) {
 	for (int i = 0; i < n; i++)
 		printf("%d, ", vetor[i]);
 	printf("\n");
 }
 
 int main() {
-	int a[3] = {5, 6, 7};
-	int b[4] = {1, 2, 0, 8};
+	int *a, *b, sizeA, sizeB;
 	
+	printf("Tamanho vetor A: ");
+	scanf("%d", &sizeA);
+	
+	printf("Tamanho vetor B: ");
+	scanf("%d", &sizeB);
+	
+	a = malloc(sizeA * sizeof(int));
+	b = malloc(sizeB * sizeof(int));
+	
+	printf("INSIRA OS VALORES DO VETOR A:\n");
+	le_vetor(a, sizeA);
+	
+	printf("INSIRA OS VALORES DO VETOR B:\n");
+	le_vetor(b, sizeB);
+	
+	printf("Vetor A: ");
+	imprime_vetor(a,sizeA);
+	
+	printf("Vetor B: ");
+	imprime_vetor(b,sizeB);
+	
+	printf("---SWAP!---\n");
 	swap(&a, &b);
 	
-	imprime_vetor(a,4);
-	imprime_vetor(b,3);
+	printf("Vetor A: ");
+	imprime_vetor(a,sizeB);
+	
+	printf("Vetor B: ");
+	imprime_vetor(b,sizeA);
 	return 0;
 }
