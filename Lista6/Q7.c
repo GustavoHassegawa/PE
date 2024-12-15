@@ -32,5 +32,7 @@ int main() {
     convert_to_binary(numero, output, tamanho);
     printf("%s\n", output);
 
+    free(output);
+
     return 0;
 }
