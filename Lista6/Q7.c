@@ -1,6 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <stdlib.h> 
 
 int size_of_binary(int number) {
     int tamanho = 1;
