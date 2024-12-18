@@ -11,11 +11,11 @@ int size_of_binary(int number) {
     return tamanho;
 }
 
-void convert_to_binary(int number, char output[], int index) {
+void convert_to_binary(int number, char output[], int tamanho) {
     if (number > 1) {
-        convert_to_binary(number / 2, output, index - 1);
+        convert_to_binary(number / 2, output, tamanho - 1);
     }
-    output[index - 1] = (number % 2) + '0';
+    output[tamanho - 1] = (number % 2) + '0';
 }
 
 int main() {

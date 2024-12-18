@@ -12,8 +12,8 @@ VectorInt vectorint(void) {
 
 void vectorint_insert(VectorInt v, int a) {
     if (v->capacity == v->nelements) {
-        v->data = realloc(v->data,v->capacity * 2 * sizeof(int));
         v->capacity *= 2;
+        v->data = realloc(v->data,v->capacity * sizeof(int));
     }
     v->data[v->nelements] = a;
     v->nelements++;
